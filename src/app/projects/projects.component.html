@@ -1,0 +1,86 @@
+<section class=" hero-wrap top-img-container js-fullheight">
+  <img class="top-img" src="../../assets/images/project.jpg" alt="" style="height: 100%">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center pt-5 mt-md-5 fadeIn ftco-animated">
+        <h1 class="mb-3 bread mt-5">OUR PROJECTS</h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>OUR PROJECTS</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section" style="padding: 1rem;">
+  <div class="project-tab-section">
+    <span class="project-tab-item {{selectedProjectType === 1 ? 'active' : ''}}" (click)="onProjectType(1)">OnGoing</span>
+    <span class="project-tab-item {{selectedProjectType === 2 ? 'active' : ''}}" (click)="onProjectType(2)">Local</span>
+    <span class="project-tab-item {{selectedProjectType === 3 ? 'active' : ''}}" (click)="onProjectType(3)">International</span>
+  </div>
+</section>
+<section class="ftco-section" style="padding-bottom: 7rem; padding-top: 1rem">
+  <div class="container-fluid px-4">
+    <div class="row">
+      <div class="col-md-5 mb-3">
+        <div *ngFor="let project of projects" class="project-list {{project === selectedProject ? 'active' : ''}}" (click)="onSelectProject(project)">
+          <h6 class="m-0">{{project.name}}</h6>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <section *ngIf="selectedProject !== undefined" class="ftco-section-2">
+          <div class="col-md-12 projects-body ftco-animate fadeInUp ftco-animated">
+            <p><span class="pr-3">PROJECT NAME :</span> <a>{{selectedProject.name}}</a></p>
+          </div>
+          <div class="col-md-12 projects-body ftco-animate fadeInUp ftco-animated">
+            <p><span class="pr-3">DESCRIPTION :</span> <a>{{selectedProject.des}}</a></p>
+          </div>
+          <div class="col-md-12 projects-body ftco-animate fadeInUp ftco-animated">
+            <p><span class="pr-3">CLIENT :</span> <a>{{selectedProject.client}}</a></p>
+          </div>
+          <div class="col-md-12 projects-body ftco-animate fadeInUp ftco-animated">
+            <p><span class="pr-3">PERIOD :</span> <a>{{selectedProject.period}}</a></p>
+          </div>
+          <div class="col-md-12 projects-body ftco-animate fadeInUp ftco-animated">
+            <p><span class="pr-3">LOCATION :</span> <a>{{selectedProject.location}}</a></p>
+          </div>
+          <div class="col-md-12 projects-body ftco-animate fadeInUp ftco-animated">
+            <p><span class="pr-3">CAPACITY :</span> <a>{{selectedProject.capacity}}</a></p>
+          </div>
+          <div class="col-md-12 projects-body ftco-animate fadeInUp ftco-animated">
+            <p><span class="pr-3">VALUE :</span> <a>{{selectedProject.value}}</a></p>
+          </div>
+        </section>
+        <section class="ftco-section-2">
+          <div class="photograhy">
+            <div class="row no-gutters">
+              <div class="col-md-4 ftco-animate fadeInUp ftco-animated mb-3" *ngFor="let image of selectedProject.images">
+                <a (click)="openBackDropCustomClass(longContent, '../../assets/images/projects/' + image)" class="photography-entry img image-popup d-flex justify-content-center align-items-center"
+                   [ngStyle]="{backgroundImage: 'url(../../assets/images/projects/' + image + ')'}">
+                  <div class="overlay"></div>
+                  <div class="text text-center">
+                    <span class="fa fa-search-plus " style="font-size: 1.5rem"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #longContent let-modal>
+  <div class="transparent-bg-modal">
+    <div>
+      <button style="float: right; outline: 0; padding: 0 15px" type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body" style="padding: 10px;">
+      <img [src]="imgUrl" frameborder="0" style="height: 500px; width: 100%;">
+    </div>
+  </div>
+</ng-template>
+<app-footer></app-footer>
+

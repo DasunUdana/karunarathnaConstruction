@@ -1,0 +1,203 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.top-img-container {
+  height: 450px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.top-img {
+  width: 100%;
+  position: absolute;
+}
+
+/* progress bar */
+/* ================================================== */
+
+.skill-bar{
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.skill-bar:last-child{
+  margin-bottom: 0;
+}
+
+.de-progress{
+  width:100%;
+  height:4px;
+  background:#ddd;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.de-progress .progress-bar{
+  background:#f9850b;
+  height:4px;
+}
+
+.de-progress{
+  background:rgba(255,255,255,.3);
+}
+
+.dark-backdrop {
+  background-color: rgba(0, 0, 0, 0.38) !important;
+}
+
+.transparent-bg-modal, .modal-content {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.carousel-item {
+  /* Force to always be block */
+  display: block !important;
+  position: absolute;
+  transform: translateX(100%);
+  opacity: 0;
+  transition:all  0.4s;
+  visibility: hidden;
+}
+
+.carousel-item.active {
+  position: relative;
+  transform: translateX(0);
+  visibility: visible ;
+  opacity: 1;
+}
+
+.projects-body {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.project-list {
+  height: 3rem;
+  width: 100%;
+  background-color: #b3b0b0;
+  padding: 5px 10px;
+  margin: 3px;
+  cursor: pointer;
+  color: white;
+}
+
+.project-list h6 {
+  display: inline-block;
+}
+
+.project-list.active {
+  background-color: #756fb5;
+  color: white;
+}
+
+.project-tab-item {
+  padding: 0 10px;
+  color: black;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.project-tab-item.active {
+  border-bottom: 1px #00000059 solid;
+  color: #746db1;
+}
+
+.project-tab-section {
+  text-align: center;
+}
+
+.darken-bg-modal {
+  background-color: #000000d1 !important;
+  border: 0 !important;
+}
+
+.display-none-mobile {
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .display-none-mobile {
+    display: none !important;
+  }
+
+  .navbar-brand {
+    font-size: 11px !important;
+    display: table-cell !important;
+  }
+
+  .logo-container {
+    display: table !important;
+  }
+
+  /*.logo-margin {*/
+    /*margin-bottom: -5px;*/
+  /*}*/
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .display-none-mobile {
+    display: none !important;
+  }
+
+  .navbar-brand {
+    font-size: 11px !important;
+    display: table-cell !important;
+  }
+
+  .logo-container {
+    display: table !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .display-none-mobile {
+    display: flex !important;
+  }
+
+  .navbar-brand {
+    font-size: 20px !important;
+    display: inline-block !important;
+  }
+
+  .logo-container {
+    display: flex !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .display-none-mobile {
+    display: flex !important;
+  }
+
+  .navbar-brand {
+    font-size: 20px !important;
+    display: inline-block !important;
+  }
+
+  .logo-container {
+    display: flex !important;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .display-none-mobile {
+    display: flex !important;
+  }
+
+  .navbar-brand {
+    font-size: 20px !important;
+    display: inline-block !important;
+  }
+
+  .logo-container {
+    display: flex !important;
+  }
+}
